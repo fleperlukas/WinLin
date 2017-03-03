@@ -13,3 +13,8 @@ In der Bibliothek sind folgende Befehle vorhanden:
 ## Installation
 
 Header- und C-Datei in den Projektordner verschieben und in der main.c die Header-Datei inkludieren.
+
+## bald vorhandene Befehle
+
+* kbhit
+* goto(xy)
