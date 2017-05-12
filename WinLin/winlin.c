@@ -52,3 +52,27 @@ void wl_sleep(unsigned int uiSleepSeconds);
         sleep(uiSleepSeconds);
     }
 #endif // __linux__
+
+
+/*
+//erstellt Zufallszahlen
+    for(iL = 0; iL < 5; iL++){
+        iTemp = rand()% 5+1;
+        bDoppelt = false;
+
+        //guckt ob Zufallszahl doppelt ist, wenn ja dann setzt er dDoppelt auf true
+        for(iX = 0; iX < iL; iX++){
+            if(iTemp == aiF[iX]){
+                bDoppelt = true;
+            }
+        }
+
+        //wenn sie nicht doppelt ist wird die Zufallszahl = iTemp gesetzt
+        if(bDoppelt == false){
+            aiF[iL] = iTemp;
+        }else{
+            //ansonsten soll er den Schleifenvorgang wiederholen
+            --iL;
+        }
+    }
+*/
