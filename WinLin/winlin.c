@@ -61,11 +61,11 @@ void wl_sleep(unsigned int uiSleepSeconds);
 void caesarcode(char *szWort,int iV){
     int iX;
 
-    for(iX = 0; iX < sizeof(szWort); iX++){
-        if(szWort[iX] +iV == 'Z'){
-            szWort[iX] = szWort[iX] + iV;
-        }else{
-            szWort[iX] = szWort[iX] + iV - 26;
+    for(iX = 0; iX < strlen(szWort); iX++){
+        szWort[iX] = szWort[iX] + iV;
+
+        if(szWort[iX] <= 'Z'){
+            szWort[iX] = szWort[iX] - 26;
         }
     }
 }
@@ -93,5 +93,6 @@ int main(){
 
     return 0;
 }
+
 
 */
