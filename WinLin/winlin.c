@@ -53,26 +53,45 @@ void wl_sleep(unsigned int uiSleepSeconds);
     }
 #endif // __linux__
 
-
 /*
-//erstellt Zufallszahlen
-    for(iL = 0; iL < 5; iL++){
-        iTemp = rand()% 5+1;
-        bDoppelt = false;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-        //guckt ob Zufallszahl doppelt ist, wenn ja dann setzt er dDoppelt auf true
-        for(iX = 0; iX < iL; iX++){
-            if(iTemp == aiF[iX]){
-                bDoppelt = true;
-            }
-        }
+void caesarcode(char *szWort,int iV){
+    int iX;
 
-        //wenn sie nicht doppelt ist wird die Zufallszahl = iTemp gesetzt
-        if(bDoppelt == false){
-            aiF[iL] = iTemp;
+    for(iX = 0; iX < sizeof(szWort); iX++){
+        if(szWort[iX] +iV == 'Z'){
+            szWort[iX] = szWort[iX] + iV;
         }else{
-            //ansonsten soll er den Schleifenvorgang wiederholen
-            --iL;
+            szWort[iX] = szWort[iX] + iV - 26;
         }
     }
+}
+
+int main(){
+    int iZ, iV;
+    char *szWort;
+
+    printf("Wie lang soll das Wort sein: ");
+    scanf("%d", &iZ);       fflush(stdin);
+
+    if((szWort = (char *) malloc((iZ + 1) * sizeof(char))) == NULL){
+        printf("Zu wenig Speicher vorhanden!\n");
+        return EXIT_FAILURE;
+    }
+
+    scanf("%s", szWort);
+
+    printf("Um wie viele stellen soll das Wort verschoben werden? \n");
+    scanf("%d", &iV);       fflush(stdin);
+
+    caesarcode(szWort, iV);
+
+    printf("Verschluesselt: %s", szWort);
+
+    return 0;
+}
+
 */
